@@ -4,7 +4,7 @@ const runtime = require('./runtime');
 const logical = require('./logical');
 
 const requestHandler = require('./user');
-const server = http.createServer(requestHandler);
+const server = http.createServer(requestHandler); 
 // const server = http.createServer((req, res) => {
 //   console.log(req.url, req.method);
 //   //testingSyntax();
@@ -14,5 +14,5 @@ const server = http.createServer(requestHandler);
 
 const PORT = 3000;
 server.listen(PORT, () => {
-  console.log(`Server is listening on address hhtp://localhost:${PORT}`);
+  console.log(`Server is listening on address http://localhost:${PORT}`);
 });
