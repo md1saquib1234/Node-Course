@@ -4,5 +4,5 @@ const server = http.createServer(RequestHandler);
 
 const PORT = 3000;
 server.listen(PORT, () => {
-  console.log(`Server is listening on address hhtp://localhost:${PORT}`);
+  console.log(`Server is listening on address http://localhost:${PORT}`);
 });
