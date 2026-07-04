@@ -7,7 +7,7 @@ const requestHandler = require('./user');
 const app = express();
 app.get("/", (req, res, next) => {
   console.log("Came in first middleware",req.url, req.method);
-  // res.send("<p>Came from first middleware</p>");
+  res.send("<p>Came from first middleware</p>");
   next();
 });
 
