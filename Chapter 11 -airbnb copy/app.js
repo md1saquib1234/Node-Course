@@ -12,7 +12,7 @@ const rootDir = require('./utils/pathUtil');
 
 const app = express();
 
-app.use(express.static(path.join(rootDir, 'public', )));
+app.use(express.static(path.join(rootDir, 'public' )));
 
 app.use(express.urlencoded());
 
