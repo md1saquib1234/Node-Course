@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tailwind": "tailwincss -i ./views/input.css -o ./public/output.css --watch",
+    "tailwind": "tailwindcss -i ./views/input.css -o ./public/output.css --watch",
     "start": "nodemon app.js & npm run tailwind",
     "build:css": "npx @tailwindcss/cli -i ./public/home.css -o ./public/css/output.css --watch"
   },
