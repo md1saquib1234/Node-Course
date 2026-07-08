@@ -17,7 +17,7 @@ const registeredHomes = [];
 hostRouter.post("/add-home", (req, res, next) => {
   console.log('Home Registration Successful for:', req.body, req.body.houseName);
   registeredHomes.push({houseName: req.body.houseName});
-  res.sendFile(path.join(rootDir,  'views', 'homeAdded.html'));
+  res.render('homeAdded', {pageTitle: 'Home Added Successfully', });
 });
 
 exports.hostRouter = hostRouter;
