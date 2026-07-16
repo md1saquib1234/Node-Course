@@ -1,4 +1,4 @@
-//Core Modules
+//Core modules
 const path = require('path');
 
 // External modules
@@ -8,7 +8,8 @@ const express = require('express');
 // Local Modules
 const userRouter = require('./routes/userRouter');
 const {hostRouter} = require('./routes/hostRouter');
-const rootDir = require('./utils/pathUtil');
+const rootDir = require("./utils/pathUtil");
+const errorsController = require("./controllers/errors");
 
 
 const app = express();
@@ -26,9 +27,7 @@ app.use("/host",hostRouter);
 
 
 
-app.use((req, res, next) => {
-  res.status(404).render('404', {pageTitle: 'Page Not Found', currentPage: '404'});
-});
+app.use(errorsController.pageNotFound);
 
 
 
