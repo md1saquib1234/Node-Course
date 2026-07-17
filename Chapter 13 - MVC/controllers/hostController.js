@@ -18,18 +18,11 @@ exports.postAddHome = (req, res, next) => {
   );
   home.save();
 
-  res.render("host/homeAdded", {
+  res.render("host/home-added", {
     pageTitle: "Home Added Successfully",
     currentPage: "homeAdded",
   });
 };
 
-exports.getHomes = (req, res, next) => {
-  Home.fetchAll((registeredHomes) =>
-    res.render("store/home-list", {
-      registeredHomes: registeredHomes,
-      pageTitle: "airbnb Home",
-      currentPage: "Home",
-    }),
-  );
-};
+
+
