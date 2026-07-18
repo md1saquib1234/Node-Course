@@ -12,4 +12,6 @@ storeRouter.get("/homes", storeController.getHomes);
 storeRouter.get("/bookings", storeController.getBookings);
 storeRouter.get("/favourites", storeController.getFavouriteList);
 
+storeRouter.get("/homes/:homeId", storeController.getHomeDetails);
+
 module.exports = storeRouter;
