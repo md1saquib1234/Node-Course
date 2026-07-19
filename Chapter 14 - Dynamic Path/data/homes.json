@@ -1,1 +1,57 @@
-[{"id":"1","houseName":"utsav","price":"500","location":"Bengaluru","rating":"3.5","photoUrl":"https://apple.com"},{"id":"2","houseName":"brindavanam","price":"500","location":"Bengaluru","rating":"3.5","photoUrl":"https://apple.com"},{"id":"3","houseName":"mannat","price":"500","location":"Bengaluru","rating":"3.5","photoUrl":"https://apple.com"},{"id":"4","houseName":"mannat","price":"500","location":"Bengaluru","rating":"3.5","photoUrl":"https://apple.com"},{"id":"5","houseName":"mannat","price":"500","location":"Bengaluru","rating":"3.5","photoUrl":"https://apple.com"},{"houseName":"summer home","price":"1999","location":"Jaipur","rating":"4.9","photoUrl":"https://summerhome.com"},{"houseName":"winter home","price":"1999","location":"Jaipur","rating":"4.9","photoUrl":"https://winterhome.com","id":"0.8549754222998275"}]
+[
+  {
+    "id": "1",
+    "houseName": "utsav",
+    "price": "500",
+    "location": "Bengaluru",
+    "rating": "3.5",
+    "photoUrl": "/images/house1.png"
+  },
+  {
+    "id": "2",
+    "houseName": "brindavanam",
+    "price": "500",
+    "location": "Bengaluru",
+    "rating": "3.5",
+    "photoUrl": "/images/house2.png"
+  },
+  {
+    "id": "3",
+    "houseName": "mannat",
+    "price": "500",
+    "location": "Bengaluru",
+    "rating": "3.5",
+    "photoUrl": "/images/house3.png"
+  },
+  {
+    "id": "4",
+    "houseName": "mannat",
+    "price": "500",
+    "location": "Bengaluru",
+    "rating": "3.5",
+    "photoUrl": "/images/house4.png"
+  },
+  {
+    "id": "5",
+    "houseName": "mannat",
+    "price": "500",
+    "location": "Bengaluru",
+    "rating": "3.5",
+    "photoUrl": "/images/house5.png"
+  },
+  {
+    "houseName": "summer home",
+    "price": "1999",
+    "location": "Jaipur",
+    "rating": "4.9",
+    "photoUrl": "/images/house6.png"
+  },
+  {
+    "houseName": "winter home",
+    "price": "1999",
+    "location": "Jaipur",
+    "rating": "4.9",
+    "photoUrl": "/images/house7.png",
+    "id": "0.8549754222998275"
+  }
+]
