@@ -11,12 +11,12 @@ module.exports = class Favourite {
     static addToFavourite(homeId, callback) {
 
         Favourite.getFavourites((favourites) => {
-            registeredHomes.push(this);
+            favourites.push(this);
             if (favourites.includes(homeId)) {
                 console.log("Home is already marked favourite");
             } else {
                 favourites.push(homeId);
-                fs.writeFile(favouriteDataPath, JSON.stringify(registeredHomes), callback);
+                fs.writeFile(favouriteDataPath, JSON.stringify(favourites), callback);
             }
         });
 
