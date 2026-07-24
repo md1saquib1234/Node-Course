@@ -32,13 +32,17 @@ exports.getBookings = (req, res, next) => {
 };
 
 exports.getFavouriteList = (req, res, next) => {
-   Home.fetchAll((registeredHomes) =>
+  Favourite.getFavourites(favourites => {
+   Home.fetchAll((registeredHomes) => {
+    const favouriteHomes = registeredHomes.filter(home =>
+      favourites.includes(home.id));
     res.render("store/favourite-list", {
-      registeredHomes: registeredHomes,
+      favouriteHomes: favouriteHomes,
       pageTitle: "My Favourites",
       currentPage: "favourites",
-    }),
-  );  
+  })
+    });
+  }) 
 };
 
 exports.postAddToFavourite = (req, res, next) => {
