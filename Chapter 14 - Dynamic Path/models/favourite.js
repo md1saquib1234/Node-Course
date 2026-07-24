@@ -11,9 +11,8 @@ module.exports = class Favourite {
     static addToFavourite(homeId, callback) {
 
         Favourite.getFavourites((favourites) => {
-            favourites.push(this);
             if (favourites.includes(homeId)) {
-                console.log("Home is already marked favourite");
+                callback("Home is already marked favourite");
             } else {
                 favourites.push(homeId);
                 fs.writeFile(favouriteDataPath, JSON.stringify(favourites), callback);
