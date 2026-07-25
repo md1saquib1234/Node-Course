@@ -1,9 +1,29 @@
 const Home = require("../models/home");
 
 exports.getAddHome = (req, res, next) => {
-  res.render("host/addHome", {
+  res.render("host/edit-home", {
     pageTitle: "Add Home to airbnd",
     currentPage: "addHome",
+    editing: false,
+  });
+};
+
+exports.getEditHome = (req, res, next) => {
+  const homeId = req.params.homeId;
+  const editing = req.query.editing === 'true';
+
+  Home.findById(homeId, home => {
+    if (!home) {
+      console.log("Home not found for editing.");
+      return res.redirect("/host/host-home-list");
+    }
+
+    console.log(homeId, editing, home);
+    res.render("host/edit-home", {
+    pageTitle: "Edit your Home",
+    currentPage: "host-homes",
+    editing: editing,
+  });
   });
 };
 
