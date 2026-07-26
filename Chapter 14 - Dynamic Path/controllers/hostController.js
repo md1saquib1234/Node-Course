@@ -5,6 +5,7 @@ exports.getAddHome = (req, res, next) => {
     pageTitle: "Add Home to airbnd",
     currentPage: "addHome",
     editing: false,
+    home: null,
   });
 };
 
@@ -23,6 +24,7 @@ exports.getEditHome = (req, res, next) => {
     pageTitle: "Edit your Home",
     currentPage: "host-homes",
     editing: editing,
+    home: home,
   });
   });
 };
@@ -38,20 +40,36 @@ exports.getHostHomes = (req, res, next) => {
 };
 
 exports.postAddHome = (req, res, next) => {
-  console.log("Home Registration Successful for:", req.body);
-  const home = new Home(
-    req.body.houseName,
-    req.body.price,
-    req.body.location,
-    req.body.rating,
-    req.body.photoUrl,
-  );
+  const {
+    houseName,
+    price,
+    location,
+    rating,
+    photoUrl,
+  } = req.body;
+  const home = new Home( houseName,
+    price,
+    location,
+    rating,
+    photoUrl);
   home.save();
 
-  res.render("host/home-added", {
-    pageTitle: "Home Added Successfully",
-    currentPage: "homeAdded",
-  });
+  res.render("/host/host-home-list");
+};
+
+exports.postEditHome = (req, res, next) => {
+  const {id, houseName, price, location, rating, photoUrl } = req.body;
+  const home = new Home(
+    houseName,
+    price,
+    location,
+    rating,
+    photoUrl
+  );
+  home.id = id;
+  home.save();
+
+  res.redirect("/host/host-home-list");
 };
 
 

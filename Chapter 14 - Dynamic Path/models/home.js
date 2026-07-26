@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const rootDir = require('../utils/pathUtil');
 
+const homeDataPath = path.join(rootDir, 'data', 'homes.json');
+
 
 
 module.exports = class Home {
@@ -16,20 +18,25 @@ module.exports = class Home {
     }
  
     save() {
-        this.id = Math.random().toString();
-        Home.fetchAll(registeredHomes => {
-         registeredHomes.push(this);
-        const homeDataPath = path.join(rootDir, 'data', 'homes.json');
+        Home.fetchAll((registeredHomes) => {
+        if (this.id) { // edit home case
+            registeredHomes = registeredHomes.map(home => 
+                home.id === this.id ? this : home);
+
+        } else { // add home case
+           this.id = Math.random().toString();
+           registeredHomes.push(this);
+        }
+        
         fs.writeFile(homeDataPath, JSON.stringify(registeredHomes), error => {
-            
+            console.log("File Writing Concluded", error);
         });
-        })
+        });
        
     }
 
      
     static fetchAll(callback) {
-        const homeDataPath = path.join(rootDir, 'data', 'homes.json');
         fs.readFile(homeDataPath, (err, data) => {
             callback(!err ? JSON.parse(data) : []);
         });
