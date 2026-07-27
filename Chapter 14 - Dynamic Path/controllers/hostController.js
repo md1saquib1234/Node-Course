@@ -54,7 +54,7 @@ exports.postAddHome = (req, res, next) => {
     photoUrl);
   home.save();
 
-  res.render("/host/host-home-list");
+  res.redirect("/host/host-home-list");
 };
 
 exports.postEditHome = (req, res, next) => {
