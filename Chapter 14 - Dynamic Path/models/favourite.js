@@ -27,13 +27,12 @@ module.exports = class Favourite {
             callback(!err ? JSON.parse(data) : []);
         });
     }
-
     static deleteById(delhomeId, callback) {
             Favourite.getFavourites(homeIds => {
             homeIds =  homeIds.filter(homeId => delhomeId !== homeId);
             fs.writeFile(homeDataPath, JSON.stringify(homeIds), callback);
-            })
-        }
+            });
+        };
     };
 
 
