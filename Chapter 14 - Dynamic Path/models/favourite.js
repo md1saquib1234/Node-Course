@@ -27,6 +27,7 @@ module.exports = class Favourite {
             callback(!err ? JSON.parse(data) : []);
         });
     }
+    //Static method to delete a home from favourites
     static deleteById(delhomeId, callback) {
             Favourite.getFavourites(homeIds => {
             homeIds =  homeIds.filter(homeId => delhomeId !== homeId);
